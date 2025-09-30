@@ -46,3 +46,25 @@ void main() {
         print('  Tinggi: ${tinggiCm.toStringAsFixed(1)} cm');
         print('  BMI: ${bmi.toStringAsFixed(2)}');
         print('  Kategori: $kategori');
+        // Simpan ke riwayat
+        history.add({
+          'berat': berat,
+          'tinggi': tinggiCm,
+          'bmi': bmi,
+          'kategori': kategori,
+        });
+      }
+    
+    // Tampilkan semua riwayat
+    print('\n=== Riwayat Perhitungan ===');
+    for (var i = 0; i < history.length; i++) {
+      var entry = history[i];
+      print('Perhitungan ${i + 1}: '
+          '${entry['berat']}kg, '
+          '${entry['tinggi']}cm, '
+          'BMI: ${entry['bmi'].toStringAsFixed(2)}, '
+          'Kategori: ${entry['kategori']}');
+    }
+
+    print('\nProgram selesai.');
+}
