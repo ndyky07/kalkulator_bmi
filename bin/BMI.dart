@@ -25,3 +25,24 @@ void main() {
       print("⚠ Input tidak valid! Berat dan tinggi harus lebih dari 0.");
       continue;
     }
+    // Hitung BMI
+        double tinggiM = tinggiCm / 100;
+        double bmi = berat / (tinggiM * tinggiM);
+
+        // Tentukan kategori
+        String kategori;
+        if (bmi < 18.5) {
+          kategori = 'Kurus';
+        } else if (bmi < 25) {
+          kategori = 'Normal';
+        } else if (bmi < 30) {
+          kategori = 'Kelebihan berat badan (Overweight)';
+        } else {
+          kategori = 'Obesitas';
+        }
+
+        print('\nHasil:');
+        print('  Berat: ${berat.toStringAsFixed(1)} kg');
+        print('  Tinggi: ${tinggiCm.toStringAsFixed(1)} cm');
+        print('  BMI: ${bmi.toStringAsFixed(2)}');
+        print('  Kategori: $kategori');
